@@ -1,0 +1,14 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "docker demo app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "siddhant.tandon@thoughtworks.com",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.4.0"
+  }
+}
