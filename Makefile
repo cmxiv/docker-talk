@@ -1,19 +1,14 @@
+NODE_CONTAINER = my-node-server
+
 
 default:
-	# detach and attach
-	@echo "Starting deamonized docker container"
-	docker run -it -d --rm --name my-ubuntu-A ubuntu /bin/bash
-	
-	@echo ""
-	@echo "Starting attached docker container"
-	docker run -it --rm --name my-ubuntu-B ubuntu /bin/bash
+	# Volumes and port bindings
+	docker run -it -d -v`pwd`/src:/app/src --rm --name $(NODE_CONTAINER) node:8.17 node /app/src/app.js
 
-	@echo ""
-	docker ps -a
+logs:
+	# -f is shorthand for --follow
+	docker logs -f $(NODE_CONTAINER)
 
-	@echo ""
-	@echo "Attaching to detached container"
-	docker attach my-ubuntu-A
-
-	@echo ""
-	docker ps -a
+inspect:
+	# Inspects a docker instance, get JSON subsections via --format='{{json .NetworkSettings}}'
+	docker inspect $(NODE_CONTAINER)
