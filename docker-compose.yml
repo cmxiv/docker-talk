@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+    my-node-server:
+        image: my-node-app-server
+        container_name: my-node-app
+        ports:
+            - "8080:9140"
+        networks:
+            - my-network
+        build:
+            context: ./
+            dockerfile: Dockerfile
+
+networks:
+    my-network:
