@@ -3,7 +3,7 @@ NODE_CONTAINER = my-node-server
 
 default:
 	# Volumes and port bindings
-	docker run -it -d -v`pwd`/src:/app/src --rm --name $(NODE_CONTAINER) node:8.17 node /app/src/app.js
+	docker run -it -d -v`pwd`/src:/app/src --rm --name $(NODE_CONTAINER) -p 8080:9140 node:8.17 node /app/src/app.js
 
 logs:
 	# -f is shorthand for --follow
