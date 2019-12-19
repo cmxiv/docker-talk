@@ -1,6 +1,6 @@
 FROM node:8.17
 
-LABEL maintainer="siddhant.tandon@thoughtworks.com"
+LABEL maintainer="cmxiv914@gmail.com"
 
 RUN mkdir -p /app/src
 WORKDIR /app/src
