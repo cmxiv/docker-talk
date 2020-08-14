@@ -3,8 +3,8 @@ const mongoClient = require('mongodb').MongoClient;
 
 async function fetchOneDocumentFromDatabase() {
     const db = await mongoClient.connect("mongodb://nosql-db:27017");
-    const dbo = db.db('chatbot');
-    const result = await dbo.collection('config').find({}).toArray();
+    const dbo = db.db('spring-boot-talk');
+    const result = await dbo.collection('notes').find({}).toArray();
     return result[0];
 }
 
